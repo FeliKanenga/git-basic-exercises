@@ -1,0 +1,119 @@
+1. merge milkshake-flavours into master
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout master
+Switched to branch 'master'
+recruit@umuzi-admin:~/git-basic-exercises$ git merge milkshake-flavours
+Updating edf64f6..b5168a2
+Fast-forward
+ README.md     | 2 +-
+ milkshakes.md | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 milkshakes.md
+recruit@umuzi-admin:~/git-basic-exerc
+*/
+
+2. Use ls and git log to see what this did
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ ls
+milkshakes.md  README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit b5168a20a6b355c26e072cbba052c0483681b4fd (HEAD -> master, milkshake-flavours)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:15:50 2020 +0200
+
+    random readme changes
+
+commit 30665ae9235d2854220fa2d74f9e3f7c02ae6714
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:57:14 2020 +0200
+
+    added initial flavours
+
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+*/
+
+3. merge history into master
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git merge history
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "merge conflict"
+[master 03fa579] merge conflict
+recruit@umuzi-admin:~/git-basic-exercises$ git merge history
+Already up to date.
+*/
+
+4. Use ls and git log to see what this did As you can see a whole lot of changes have been made to the master branch
+
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ ls
+history.txt            README_BASE_5395.md   README_REMOTE_5395.md
+milkshakes.md          README_LOCAL_5395.md
+README_BACKUP_5395.md  README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 03fa579df9598f441340481ee6a9d92653c1d8b9 (HEAD -> master)
+Merge: b5168a2 1e55b01
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:55:39 2020 +0200
+
+    merge conflict
+
+commit 1e55b01da7a847b0295f6b6144d5ba90add74774 (history)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:18:19 2020 +0200
+
+    rewrote readme
+
+commit b5168a20a6b355c26e072cbba052c0483681b4fd (milkshake-flavours)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:15:50 2020 +0200
+
+    random readme changes
+*/
+
+5. Now lets take a look at the other branches
+
+
+6.1 merge the master branch into history. Use git log to see whats up.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout history
+Switched to branch 'history'
+recruit@umuzi-admin:~/git-basic-exercises$ git merge master
+Updating 1e55b01..03fa579
+Fast-forward
+ README.md     | 5 +++++
+ milkshakes.md | 1 +
+ 2 files changed, 6 insertions(+)
+ create mode 100644 milkshakes.md
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 03fa579df9598f441340481ee6a9d92653c1d8b9 (HEAD -> history, master)
+Merge: b5168a2 1e55b01
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:55:39 2020 +0200
+
+    merge conflict
+
+commit 1e55b01da7a847b0295f6b6144d5ba90add74774
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:18:19 2020 +0200
+
+    rewrote readme
+*/
+
+6.2 checkout master again. git log again. Can you spot any differences?
+
+- master remains the same, after master has been merged with history
+
+

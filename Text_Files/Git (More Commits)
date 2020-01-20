@@ -1,0 +1,42 @@
+1. type in nano README.md. This will open up a text editor. Type in some stuff and then press ctrl x to exit. Then y then enter. This will save your changes
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano README.md
+*/
+
+2. type in cat README.md. This will print your file to the console
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ cat README.md
+Hi i am feli 
+*/
+
+3. take a look at the git status again and make sure you understand it
+
+- The file is unstaged due to the changes made.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+Changes not staged for commit:
+*/
+
+4. commit your changes to your repo. Your commit should have the message "second commit"
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "second commit"
+[master a52a088] second commit
+ 1 file changed, 1 insertion(+)
+*/
+
+5. make some more changes to your readme and make a "third commit"
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "third commit"
+[master edf64f6] third commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+*/
+

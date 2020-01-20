@@ -1,0 +1,70 @@
+1. You should still be inside the git-basic-exercises directory. Let’s get out of there. cd ../
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ cd ..
+*/
+
+2. Now let’s clone a repo. point your browser here: https://github.com/Umuzi-org/tech-department
+
+3.Now there is a friendly green button that says “Clone or download”. Click on it.
+/*
+https://github.com/Umuzi-org/tech-department.git
+*/
+
+4.You will see a url come up. Copy it. You will need to paste it into the terminal in a moment
+
+/*
+https://github.com/Umuzi-org/tech-department.git
+*/
+
+5. In your terminal type in git clone $THE_URL_YOU_JUST_COPIED. It should look something like this: git clone https://github.com/Umuzi-org/tech-department
+
+/*
+recruit@umuzi-admin:~$ git clone https://github.com/Umuzi-org/tech-department.git
+Cloning into 'tech-department'...
+*/
+
+6. cd into the tech-department directory that was just created
+
+/*
+recruit@umuzi-admin:~$ cd tech-department
+recruit@umuzi-admin:~/tech-department$ 
+*/
+
+7.explore a little using git branch and git log
+
+/*
+recruit@umuzi-admin:~/tech-department$ git branch
+* master
+recruit@umuzi-admin:~/tech-department$ git log
+commit 412b21975971a2a134306d0b58c432d8f1059095 (HEAD -> master, origin/master, origin/HEAD)
+Author: Sheena O'Connell <sheena.oconnell@gmail.com>
+*/
+
+8. type in git branch -a. This shows the remote branches
+
+/*
+recruit@umuzi-admin:~/tech-department$ git branch -a
+* master
+  remotes/origin/Animals2
+  remotes/origin/Big_O
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/LinuxChallengeUpdate
+*/
+
+9.try to checkout the branch called project/git-basic-exercises on your local computer. You can do it, you’ll need to figure out how
+
+/*
+recruit@umuzi-admin:~/tech-department$ git checkout -b project/git-basic-exercises
+Switched to a new branch 'project/git-basic-exercises'
+*/
+
+10. type in git remote -v
+
+/*
+recruit@umuzi-admin:~/tech-department$ git remote -v
+origin	https://github.com/Umuzi-org/tech-department.git (fetch)
+origin	https://github.com/Umuzi-org/tech-department.git (push)
+*/
+
+

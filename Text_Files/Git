@@ -1,0 +1,136 @@
+1. Create a directory named git-basic-exercises
+
+/*
+recruit@umuzi-admin:~$ mkdir git-basic-exercises
+*/
+
+2. cd into your new directory
+
+/*
+recruit@umuzi-admin:~$ cd git-basic-exercises
+recruit@umuzi-admin:~/git-basic-exercises$ 
+*/
+
+3. look at what’s inside using ls -a. It should be empty
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ ls -a
+.  ..
+*/
+
+4. initialize your git repo using git init. Then check ls -a again. Can you spot the difference?
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git init
+Initialized empty Git repository in /home/recruit/git-basic-exercises/.git/
+recruit@umuzi-admin:~/git-basic-exercises$ ls -a
+.  ..  .git
+*/
+
+5. check the status of your repo by typing git status
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+*/
+
+6. type in touch README.md. This creates a new blank file
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ touch README.md
+recruit@umuzi-admin:~/git-basic-exercises$ ls -a
+.  ..  .git  README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+*/
+
+7. type in git log. The output should make sense to you
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+fatal: your current branch 'master' does not have any commits yet
+*/
+
+8. Now add your readme file to your git staging area. Hint: use the git add command
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+*/
+
+9. Then check your git status again. Can you see the difference?
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+*/
+
+10. Try to unstage your file and check your git status again
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git rm --cached README.md
+rm 'README.md'
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+*/
+
+11. Ok, now for your first commit: Make sure your readme file is staged then type in git commit -m "initial commit" Your output should be something like this: [master (root-commit) 2103b64] initial commit 1 file changed, 0 insertions(+), 0 deletions(-) create mode 100644 README.md 
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "initial commit"
+[master (root-commit) 5629d64] initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+*/
+
+12.type in git log isn’t that nice? press q to exit
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 5629d64d7d6bf87d3862720891ea725fb43fcdf3 (HEAD -> master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:33:55 2020 +0200
+
+    initial commit
+*/
+

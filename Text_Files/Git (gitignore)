@@ -1,0 +1,104 @@
+1. Create a new file touch ignore-me.db
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ touch ignore-me.db
+*/
+
+2. Now use git status to see what is going on in your repo, you will see ignore-me.bd as an unstaged file.
+
+/*
+cruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README_BACKUP_5395.md
+	README_BASE_5395.md
+	README_LOCAL_5395.md
+	README_REMOTE_5395.md
+	ignore-me.db
+*/
+
+
+3. Now lets create a .gitignore file type nano .gitignore
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano .gitignore
+*/
+
+4. In this file type ignore-me.db save and exit your .gitignore file
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano .gitignore
+*/
+
+5. Now use git status you will notice that ignore-me.db is no longer an unstaged file and is no longer being tracked by github and .gitignore is being tracked
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+*/
+
+6. Create a new directory mkdir large-directory-that-should-be-local-only
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ mkdir large-directory-that-should-be-local-only
+*/
+
+7. cd into this directory and create a readme.md file with some random text in
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises/large-directory-that-should-be-local-only$ echo "hi, we about to finish" > README.md
+*/
+
+8. Use cd .. to go back to your main directory and git status to see what is going on, you should now see your new folder as an unstaged change.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises/large-directory-that-should-be-local-only$ cd ..
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	README_BACKUP_5395.md
+	README_BASE_5395.md
+	README_LOCAL_5395.md
+	README_REMOTE_5395.md
+	large-directory-that-should-be-local-only/
+*/
+
+9. Lets add this folder to .gitignore nano .gitignore and add /large-directory-that-should-be-local-only on a new line, save and close .gitignore
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano .gitignore
+*/
+
+10. Check git status again, .gitignore is going to be super useful later when you are submitting projects and need to keep your repos small and free from junk and irrelevant files.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	README_BACKUP_5395.md
+	README_BASE_5395.md
+	README_LOCAL_5395.md
+	README_REMOTE_5395.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+*/

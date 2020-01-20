@@ -1,0 +1,64 @@
+1. type in git log. You should see all your commits there. It should look something like this
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0 (HEAD -> master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+
+commit a52a088bcee50577586903da1452b05a215da49b
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:41:38 2020 +0200
+
+    second commit
+
+commit 5629d64d7d6bf87d3862720891ea725fb43fcdf3
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:33:55 2020 +0200
+
+    initial commit
+*/
+
+
+1.  Copy the commit hash for your second commit. You can just select it with your mouse and right click and choose ‘copy’
+
+/*
+commit a52a088bcee50577586903da1452b05a215da49b
+*/
+
+2. press q to exit the log view. You should now be back at the terminal
+
+- recruit@umuzi-admin:~/git-basic-exercises$ 
+
+3. type in git checkout and then paste in the commit hash and press enter
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout a52a088bcee50577586903da1452b05a215da49b
+Note: checking out 'a52a088bcee50577586903da1452b05a215da49b'.
+
+HEAD is now at a52a088 second commit
+*/
+
+4. cat README.md It’s like going back in time
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ cat README.md
+Hi i am feli 
+*/
+
+5. git checkout master
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout master
+Previous HEAD position was a52a088 second commit
+Switched to branch 'master'
+*/
+
+6. cat README.md Now we are up to date
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ cat README.md
+Hi i am feli, these are some more changes
+*/
+

@@ -1,0 +1,60 @@
+1. While still in your newly created branch project/git-basic-exercises use git log to see the history.
+
+/*
+recruit@umuzi-admin:~/tech-department$ git log
+commit 412b21975971a2a134306d0b58c432d8f1059095 (HEAD -> project/git-basic-exercises, origin/master, origin/HEAD, master)
+Author: Sheena O'Connell <sheena.oconnell@gmail.com>
+Date:   Sat Jan 18 13:56:47 2020 +0200
+
+    deploy
+*/
+
+2. From your new branch called project/git-basic-exercisesnavigate back to your git-basic-exercises repo, use git log again to see the difference.
+
+/*
+recruit@umuzi-admin:~/tech-department$ cd
+recruit@umuzi-admin:~$ cd git-basic-exercises
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 03fa579df9598f441340481ee6a9d92653c1d8b9 (HEAD -> master, origin/master, origin/history, history)
+Merge: b5168a2 1e55b01
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:55:39 2020 +0200
+
+    merge conflict
+*/
+
+3. Let’s go back to our home directory cd and make a new folder mkdir this-will-be-another-repo
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ cd ..
+recruit@umuzi-admin:~$ mkdir this-will-be-another-repo
+*/
+
+4.cd into this folder now use git init to initilise a new git repo here, you should get a message in terminal that says ‘Initialized empty Git repository in /home/$specific-path/this-will-be-another-repo/.git/’
+
+/*
+recruit@umuzi-admin:~$ cd this-will-be-another-repo
+recruit@umuzi-admin:~/this-will-be-another-repo$ git init
+Initialized empty Git repository in /home/recruit/this-will-be-another-repo/.git/
+*/
+
+5. Type in touch README.md. This creates a new blank file. Stage then commit.
+
+/*
+recruit@umuzi-admin:~/this-will-be-another-repo$ touch README.md
+recruit@umuzi-admin:~/this-will-be-another-repo$ git add README.md
+recruit@umuzi-admin:~/this-will-be-another-repo$ git commit -m "yay"
+[master (root-commit) 6de78be] yay
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+*/
+
+6. Go back to your git-basic-exercises repo and use git log to check that you are in the right place and repo.
+
+/*
+recruit@umuzi-admin:~/this-will-be-another-repo$ cd ..
+recruit@umuzi-admin:~$ cd git-basic-exercises
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 03fa579df9598f441340481ee6a9d92653c1d8b9 (HEAD -> master, origin/master, origin/history, history)
+Merge: b5168a2 1e55b01
+*/

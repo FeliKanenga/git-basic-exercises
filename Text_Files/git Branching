@@ -1,0 +1,184 @@
+1. git branch This lists all your branches. Git makes a branch named master by default
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git branch
+* master
+*/
+
+2. Now create a new branch called milkshake-flavours. git is not too restrictive when it comes to naming our branches. It’s generally best to choose a name that has something to do with what the branch is for. Our branch is about milkshakes
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git branch milkshake-flavours
+
+or
+
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout -b milkshake-flavours
+Switched to a new branch 'milkshake-flavours'
+*/
+
+3.type in git branch. Notice the little *.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git branch
+* master
+  milkshake-flavours
+*/
+
+4. check out your new branch. type in git branch again and look at the *. Can you see what it means? Try switching between the different branches and see how hings change.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout milkshake-flavours
+Switched to branch 'milkshake-flavours'
+*/
+
+5. Make sure you are on the milkshake-flavours branch then type in nano milkshakes.md and write fill in a few flavours. Mmmm. save and exit
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano milkshakes.md
+*/
+
+6. what does git status tell you?
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git status
+On branch milkshake-flavours
+
+	milkshakes.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+*/
+
+7. commit your new file with the message "added initial flavours"
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add milkshakes.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "added initial flavours"
+[milkshake-flavours 30665ae] added initial flavours
+ 1 file changed, 1 insertion(+)
+ create mode 100644 milkshakes.md
+*/
+
+8. take a look at your git log again. It should make sense
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 30665ae9235d2854220fa2d74f9e3f7c02ae6714 (HEAD -> milkshake-flavours)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:57:14 2020 +0200
+
+    added initial flavours
+
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0 (master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+*/
+
+9. checkout your master branch. It’ll look a little different. Can you see why?
+
+- There is one commit that is under the "milkshake-flavours" branch.
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout master
+Switched to branch 'master'
+*/
+
+10. from your master branch, create a new branch called history and check it out. If you say git log it should only have three commits
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout -b history 
+Switched to a new branch 'history'
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0 (HEAD -> history, master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+*/
+
+11. type in history > history.txt. Can you guess what it does?
+
+ - It stores the history of the commands typed in termial into the history.txt file
+
+12.commit your changes with the message "added history". Take a look at the git log
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add history.txt
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "added history"
+[history 678d50c] added history
+ 1 file changed, 434 insertions(+)
+ create mode 100644 history.txt
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 678d50cb8b2f7466cc9a395e4eaab2b1b0c95a1c (HEAD -> history)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 10:02:58 2020 +0200
+
+    added history
+
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0 (master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+*/
+
+13. now checkout your milkshake branch and look at the git log. it should have your three master commits and your one milkshake commit
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout milkshake-flavours
+Switched to branch 'milkshake-flavours'
+recruit@umuzi-admin:~/git-basic-exercises$ git log
+commit 30665ae9235d2854220fa2d74f9e3f7c02ae6714 (HEAD -> milkshake-flavours)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:57:14 2020 +0200
+
+    added initial flavours
+
+commit edf64f68e132aec0ffc298f4a5f8e12c6db85ab0 (master)
+Author: feliKanenga <felicia.kanenga@umuzi.org>
+Date:   Mon Jan 20 09:43:30 2020 +0200
+
+    third commit
+*/
+
+14. make some arbitrary changes to the readme file and make a new commit with the message "random readme changes"
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ nano README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "random readme changes"
+[milkshake-flavours b5168a2] random readme changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+*/  
+
+15. checkout history again and cat README.md
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout history
+Switched to branch 'history'
+recruit@umuzi-admin:~/git-basic-exercises$ cat README.md
+Hi i am feli, these are some more changes 
+*/  
+
+16. now on your history branch do the following: rm README.md echo "booya" > README.md You should know what these lines do.
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ rm README.md
+recruit@umuzi-admin:~/git-basic-exercises$ echo "booya" > README.md
+*/ 
+
+17. commit your changes. Use the commit message "rewrote readme"
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git add README.md
+recruit@umuzi-admin:~/git-basic-exercises$ git commit -m "rewrote readme"
+[history 1e55b01] rewrote readme
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+*/ 
+
+18.checkout master again
+
+/*
+recruit@umuzi-admin:~/git-basic-exercises$ git checkout master
+*/ 
+
